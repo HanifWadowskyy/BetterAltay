@@ -1374,8 +1374,8 @@ class Server{
 				mkdir($pluginPath, 0777);
 			}
 
-			if(!file_exists($pluginPath . "Altay/")){
-				mkdir($pluginPath . "Altay/", 0777);
+			if(!file_exists($pluginPath . "BetterAltay/")){
+				mkdir($pluginPath . "BetterAltay/", 0777);
 			}
 
 			$this->dataPath = realpath($dataPath) . DIRECTORY_SEPARATOR;
@@ -1391,12 +1391,12 @@ class Server{
 			}
 			$this->config = new Config($this->dataPath . "pocketmine.yml", Config::YAML, []);
 
-			$this->logger->info("Loading altay.yml...");
-			if(!file_exists($this->dataPath . "altay.yml")){
-				$content = file_get_contents(\pocketmine\RESOURCE_PATH . "altay.yml");
-				@file_put_contents($this->dataPath . "altay.yml", $content);
+			$this->logger->info("Loading BetterAltay.yml...");
+			if(!file_exists($this->dataPath . "BetterAltay.yml")){
+				$content = file_get_contents(\pocketmine\RESOURCE_PATH . "BetterAltay.yml");
+				@file_put_contents($this->dataPath . "BetterAltay.yml", $content);
 			}
-			$this->altayConfig = new Config($this->dataPath . "altay.yml", Config::YAML, []);
+			$this->altayConfig = new Config($this->dataPath . "BetterAltay.yml", Config::YAML, []);
 			$this->loadAltayConfig();
 
 			$this->logger->info("Loading server properties...");
